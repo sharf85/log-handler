@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Contacts</title>
+</head>
+<body>
+
+<div class="row">
+    <div class="col m6 offset-m3">
+        <div class="row">
+            <div class="col s12">
+                <h4>Uniq users by source</h4>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>qty</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="key: ${map.keySet()}">
+                        <td th:text="${key}"></td>
+                        <td th:text="${map.get(key)}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
+
